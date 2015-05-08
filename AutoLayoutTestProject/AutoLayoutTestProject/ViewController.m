@@ -73,6 +73,12 @@
     [self.view addConstraint:self.rightConstrain];
     }
     
+    [UIView animateWithDuration:.5 delay:0.0 usingSpringWithDamping:0.25 initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        [self.view layoutIfNeeded];
+    } completion:nil];
+
+    
+    
 }
 
 #pragma mark - Custom Methods
@@ -135,6 +141,12 @@
     
     
     }
+    
+    [UIView animateWithDuration:.5 delay:0.0 usingSpringWithDamping:0.25 initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        [self.view layoutIfNeeded];
+    } completion:nil];
+    
+    
     
 }
 
