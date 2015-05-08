@@ -26,12 +26,18 @@
                                         <state key="normal" title="ADD">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="ADDbtn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VPc-kF-ski"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lor-eJ-gbm">
                                         <rect key="frame" x="222" y="17" width="64" height="30"/>
                                         <state key="normal" title="REMOVE">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="RemoveBtn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="N8v-qA-0RQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,6 +65,9 @@
                             <constraint firstAttribute="centerX" secondItem="w1t-YN-Dvf" secondAttribute="centerX" id="rd7-M5-2Fl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tilesContainerView" destination="Ezo-7c-4kL" id="KW4-j7-qmU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

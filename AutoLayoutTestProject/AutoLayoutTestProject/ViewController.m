@@ -9,19 +9,54 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+- (IBAction)ADDbtn:(UIButton *)sender;
+- (IBAction)RemoveBtn:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIView *tilesContainerView;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+
+#pragma mark - ViewController Methods
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+   
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
+
+#pragma mark - IBAction Methods
+
+
+- (IBAction)ADDbtn:(UIButton *)sender
+{
+
+}
+
+- (IBAction)RemoveBtn:(UIButton *)sender
+{
+
+}
+
+#pragma mark - Custom Methods
+
+- (UIView *)createTileView
+{
+
+    UIView *tile = [[UIView alloc]init];
+    tile.translatesAutoresizingMaskIntoConstraints = NO;
+    tile.backgroundColor = [UIColor darkGrayColor];
+    return  tile;
+    
+
+}
+
 
 @end
