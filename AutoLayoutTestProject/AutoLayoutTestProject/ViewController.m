@@ -85,10 +85,10 @@
 
 - (UIView *)createTileView
 {
-
-    UIView *tile = [[UIView alloc]init];
+    
+     UIView *tile = [[UIView alloc]init];
     tile.translatesAutoresizingMaskIntoConstraints = NO;
-    tile.backgroundColor = [UIColor darkGrayColor];
+    tile.backgroundColor = [UIColor orangeColor];
     return  tile;
     
 
