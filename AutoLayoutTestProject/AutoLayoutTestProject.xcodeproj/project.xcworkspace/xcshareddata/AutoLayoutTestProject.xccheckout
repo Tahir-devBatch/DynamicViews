@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6504A686-62FD-43EF-BB7B-EF57B4F46AE3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AutoLayoutTestProject</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D6978E2EA8365B95786179425CF75E2B80DD8C88</key>
+		<string>https://bitbucket.org/Tahir-devBatch/autolayouttesting.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AutoLayoutTestProject/AutoLayoutTestProject.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D6978E2EA8365B95786179425CF75E2B80DD8C88</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/Tahir-devBatch/autolayouttesting.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D6978E2EA8365B95786179425CF75E2B80DD8C88</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D6978E2EA8365B95786179425CF75E2B80DD8C88</string>
+			<key>IDESourceControlWCCName</key>
+			<string>autolayouttesting</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -12,6 +12,9 @@
 - (IBAction)ADDbtn:(UIButton *)sender;
 - (IBAction)RemoveBtn:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIView *tilesContainerView;
+@property (strong, nonatomic)NSMutableArray *tilesArray;
+
+@property(strong, nonatomic)NSLayoutConstraint *rightConstrain;
 
 @end
 
@@ -23,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    self.tilesArray = [[NSMutableArray alloc]init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,12 +40,21 @@
 
 - (IBAction)ADDbtn:(UIButton *)sender
 {
-
+    
+    UIView *tileView = [self createTileView];
+    [self.tilesContainerView addSubview:tileView];
+    [self.tilesArray addObject:tileView];
+    [self applyAutoLayoutConstraintsToView:tileView];
+    
+    
 }
 
 - (IBAction)RemoveBtn:(UIButton *)sender
 {
 
+    [[self.tilesArray lastObject] removeFromSuperview];
+    [self.tilesArray removeLastObject];
+    
 }
 
 #pragma mark - Custom Methods
@@ -57,6 +69,70 @@
     
 
 }
+
+
+- (void)applyAutoLayoutConstraintsToView:(UIView *)viewToAdd
+{
+   
+    UIView *lastView = [self.tilesArray lastObject];
+    
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:viewToAdd attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.tilesContainerView attribute:NSLayoutAttributeTop multiplier:1.0 constant:5];
+    
+    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:viewToAdd attribute:NSLayoutAttributeBottom     relatedBy:NSLayoutRelationEqual toItem:self.tilesContainerView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-5];
+
+    
+    [self.view removeConstraint:self.rightConstrain];
+    
+    if([self.tilesArray count] == 1){
+    
+        self.rightConstrain = [NSLayoutConstraint constraintWithItem:viewToAdd attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.tilesContainerView attribute:NSLayoutAttributeRight multiplier:1.0 constant:-5];
+        
+        NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:viewToAdd attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.tilesContainerView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:5];
+        
+        
+        NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:viewToAdd attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationLessThanOrEqual toItem:self.tilesContainerView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
+        
+        
+        [self.view addConstraints:@[top, bottom, self.rightConstrain, leading, width]];
+        
+        
+        
+    
+    }else{
+    
+    
+        self.rightConstrain = [NSLayoutConstraint constraintWithItem:viewToAdd attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.tilesContainerView attribute:NSLayoutAttributeRight multiplier:1.0 constant:5];
+        
+        NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:viewToAdd attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:lastView attribute:NSLayoutAttributeRight multiplier:1.0 constant:5];
+        
+        NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:viewToAdd attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:lastView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:5];
+        
+        
+        
+        [self.view addConstraints:@[top, bottom, self.rightConstrain, width, leading]];
+        
+        
+    
+    
+    
+    
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @end
