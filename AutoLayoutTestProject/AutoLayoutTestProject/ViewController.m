@@ -63,11 +63,15 @@
 - (IBAction)RemoveBtn:(UIButton *)sender
 {
 
-  
+    [self.view removeConstraint:self.rightConstrain];
     [[self.tilesArray lastObject] removeFromSuperview];
     [self.tilesArray removeLastObject];
     
-    
+    if([self.tilesArray count] > 0){
+    self.rightConstrain = [NSLayoutConstraint constraintWithItem:[self.tilesArray lastObject] attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.tilesContainerView attribute:NSLayoutAttributeRight multiplier:1.0 constant:-5];
+   
+    [self.view addConstraint:self.rightConstrain];
+    }
     
 }
 
